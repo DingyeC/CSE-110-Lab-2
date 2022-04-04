@@ -66,7 +66,15 @@ public class Exercise3 {
                         isDisplayed()));
         materialButton.perform(click());
 
-        onView(withId(R.id.result)).check(matches(withText("1766")));
+        ViewInteraction appCompatEditText3 = onView(
+                allOf(withId(R.id.number2),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                4),
+                        isDisplayed()));
+        appCompatEditText3.check(matches(withText("1766")));
     }
 
     private static Matcher<View> childAtPosition(
